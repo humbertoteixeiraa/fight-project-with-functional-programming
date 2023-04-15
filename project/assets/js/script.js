@@ -1,7 +1,12 @@
 //INSTANCES
-const char = createKnigth('Humbert')
+const char = createKnigth('Humbert');
+const monster = createLittleMonster();
 
 
 //TESTS
-console.log(char.name);
-console.log(char.life);
+stage.start(
+    char,
+    monster,
+    document.querySelector('#char'),
+    document.querySelector('#monster')
+);
