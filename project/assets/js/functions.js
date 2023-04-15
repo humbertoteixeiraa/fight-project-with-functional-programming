@@ -83,6 +83,43 @@ const stage = {
     },
 
     doAttack(attacking, attacked) {
+        if(attacking.life <= 0 || attacked.life <= 0) {
+            log.addMensage(`Attacking dead dog!`);
+            return;
+        }
 
+        const attackFactor = (Math.random() * 2).toFixed(2);
+        const defenseFactor = (Math.random() * 2).toFixed(2);
+
+        const actualAttack = attacking.attack * attackFactor;
+        const actualDefense = attacked.defense * defenseFactor;
+        
+        if(actualAttack > actualDefense) {
+            attacked.life -= actualAttack;
+            attacked.life = attacked.life < 0 ? 0 : attacked.life;
+            log.addMensage(`${attacking.name} did ${actualAttack.toFixed(2)} damage out of ${attacked.name}`);
+        } else {
+            log.addMensage(`${attacked.name} managed to defend himself ...`);
+        }
+
+        this.update();
+    }
+}
+
+const log = {
+    list: [],
+
+    addMensage(msg) {
+        this.list.push(msg);
+        this.render();
+    },
+
+    render() {
+        const logEl = document.querySelector('.log');
+        logEl.innerHTML = '';
+
+        for (let i in this.list) {
+            logEl.innerHTML += `<li>${this.list[i]}</li>`;
+        }
     }
 }
