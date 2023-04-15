@@ -27,3 +27,25 @@ const createSorcerer = (name) => {
         defense: 3
     }
 }
+
+const createLittleMonster = (name) => {
+    return {
+        ...defaultCharacter,
+        name: 'Little Monster',
+        life: 40,
+        maxLife: 40,
+        attack: 4,
+        defense: 4
+    }
+}
+
+const createBigMonster = (name) => {
+    return {
+        ...defaultCharacter,
+        name: 'Big Monster',
+        life: 120,
+        maxLife: 120,
+        attack: 16,
+        defense: 6
+    }
+}
