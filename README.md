@@ -1,2 +1,3 @@
 # fight-project-with-functional-programming
- Character fight project, using the concept of FUNCTIONAL PROGRAMMING, created in the B7 WEB Javascript course.
+* Objective: work functional programming concepts with JavaScript.
+* Technologies used: HTML5, CSS3 and JavaScript.
